@@ -7,4 +7,3 @@ psycopg2-binary==2.9.1
 pytz==2021.1
 sqlparse==0.4.1
 whitenoise==5.3.0
->>>>>>> 3034a5e8fd4a98141e7c64b09ea6c9b6338388e5
