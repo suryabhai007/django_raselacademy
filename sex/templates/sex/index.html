@@ -1,0 +1,18 @@
+{% extends "sex/base.html" %}
+{% load static %}
+
+
+{% block body %}
+
+{% if category %}
+<ul>
+{% for categories in category %}
+ <a id="sex" href="{% url 'sex:category' categories.name %}"> {{categories.name}}</a>
+
+{% endfor %}
+</ul>
+{% else %}
+<p> No Category are available </p>
+{% endif %}
+
+{% endblock %}

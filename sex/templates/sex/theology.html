@@ -1,0 +1,13 @@
+{% extends "raselacademy/base.html" %}
+{% block title %}
+{{theology.title}}
+{% endblock %}
+
+{% block body %}
+ <h1> {{theology.title}}</h1>
+<p> {{theology.heading}}</p>
+<p> {{theology.description}}</p>
+
+<a href="{% url 'index' %}"> Back to Home </a>
+
+{% endblock %}

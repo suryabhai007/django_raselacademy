@@ -1,0 +1,39 @@
+{% extends "raselacademy/base.html" %}
+
+{% block body %}
+ 
+<h2>  {{ blog.title | safe }}  </h2>
+<hr>
+<h2>  {{ blog.heading | safe }}  </h2>
+<h3>  {{ blog.body | safe }}   </h3>
+<p> <b>Created On: {{blog.created_on}} </b> </p>
+
+ <form action="{% url 'raselacademy:blog' blog.title %}" method="POST">
+    {% csrf_token %}
+   {{form.as_p}}
+  <input type="submit" value="Comment">
+ </form>
+
+
+
+
+{% for blog in blogs %}
+
+<h3><a href="{% url 'raselacademy:blog' blog.title %}"> {{blog.title}} </a></h3>
+
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+<a href="{% url 'raselacademy:index' %}">Home </a>
+
+
+{% endblock %}

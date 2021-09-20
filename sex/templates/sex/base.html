@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        {% block title %} <title>Welcome to RaselAcademy!</title> {% endblock %}
+ 
+         <link rel="stylesheet" href="{% static 'sex/styles.css' %}"/>
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'sex/images/logo.png' %}">
+	
+    </head>
+    
+    <body>
+	<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+	<h1 id="sex"> Welcome to Rasel Academy(RA)</h1>
+	<h4 id="fem"> <i>A learning Platform!</i> </h4>
+	<img src="{% static 'sex/images/ra.png' %}" alt="Logo">
+	
+
+	<div class="topnav" id="myTopnav">
+  <a href="{% url 'sex:index' %}" class="active">Home</a>
+	
+
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+ 
+ <a href="#sex"> About </a>
+ 
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+        
+     
+     
+        {% block body %}
+        {% endblock %}
+	<footer>
+	<p>&#169; Copyright: Rezoanul Islam Rasel &#174; </p>
+	</footer>
+    </body>
+</html>

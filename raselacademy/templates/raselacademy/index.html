@@ -1,0 +1,120 @@
+{% extends "raselacademy/base.html" %}
+{% load static %}
+
+
+{% block body %}
+
+<video width="320" height="240" controls>
+<source src="{% static 'raselacademy/media/htmldecl.mp4' %}" type="video/mp4">
+</video>
+
+
+
+
+
+
+
+ 
+
+ 
+
+<h1> Search </h1>
+
+<form action="{% url 'raselacademy:index' %}" method="GET">
+{% csrf_token %}
+<input type="text" name="title" placeholder="Search Here">
+<input type="submit" value="Search">
+</form>
+<br> 
+{% for blog in blog_title %}
+
+
+
+<p> <h3> <a href="{% url 'raselacademy:blog' blog.title %}"> {{blog.title}} </h3> </a> </p>
+
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1> Featured Post </h1>
+
+
+ {% for blogs in blog %}
+
+  <p> <a id="pil" href="{% url 'raselacademy:blog' blogs.title %}"> {{blogs.title}} </h3> </a> </p>
+{% endfor %}
+
+
+
+
+
+ <h1> Subscribe to my Blog </h1>
+ <form action="{% url 'raselacademy:index' %}" method="POST">
+    {% csrf_token %}
+   {{form.as_p}}
+  <input type="submit" value="Subscribe">
+ </form>
+
+
+<hr>
+<h1> Get API </h1>
+<a href="{% url 'raselacademy:blog_api' %}"> Get API </a>
+<hr>
+
+
+<div classs="topnav"> 
+	<h2> Courses </h2>
+	
+	{% for categories in category %}
+	<p>
+	
+	<a class="active" href="{% url 'raselacademy:categories' categories.name %}" title="Find your desire"> {{ categories.name | safe }} </a>
+	</p>
+	
+	{% endfor %}
+	<hr>
+	<h2> Feeds </h2>
+	
+
+	<a class="active" href="{% url 'raselacademy:LatestBlogsFeed' %}" title="Subscribe to my RSS feed">RSS feed </a>
+	 
+	</div>
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+<footer>
+
+
+</footer>
+
+
+<hr>
+{% endblock %}

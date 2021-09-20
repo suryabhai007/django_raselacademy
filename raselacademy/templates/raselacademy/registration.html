@@ -1,0 +1,26 @@
+{% extends "raselacademy/base.html" %}
+
+{% block body %}
+ <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+<div>
+<form action="{% url 'registration' %}" method="post">
+{% csrf_token %}
+<div> <p> First Name: <input type="text" name="first" placeholder="First name"></div>
+<div> <p> User name: <input type="text" name="user" placeholder="user"></div>
+<div> <p> Password: <input type="password" name="password" placeholder="password"></div>
+<div> <input type="submit" value="OK"></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<hr>
+<div> <p> Registered Users </p> </div>
+ <p> {{registration.first}} </p>
+
+ 
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "sex/base.html" %}
+
+{% block body %}
+ 
+<h2>  {{ blogger.title | safe }}  </h2>
+<hr>
+<h2>  {{ blog.heading | safe }}  </h2>
+<h3>  {{ blogger.description | safe }}   </h3>
+<p> <b>Created On: {{blog.created_on}} </b> </p>
+<h1> Read Comments </h1>
+<a href="{% url 'sex:comment' blogger.title %}">{{blogger.title}} </a> 
+<hr>
+<form action="{% url 'sex:blogger' blogger.title %}" method="POST">
+{% csrf_token %}
+{{form.as_p}}
+<br>
+<input type="submit" value="Leave a Comment">
+</form>
+
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="{% url 'sex:index' %}">Home </a>
+
+
+{% endblock %}

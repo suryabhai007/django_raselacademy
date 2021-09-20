@@ -1,0 +1,22 @@
+{% extends "raselacademy/base.html" %}
+
+{% block body %}
+ 
+
+{% for blogs in blog %}
+
+<p><a href="{% url 'raselacademy:blog' blogs.title %}"> {{blogs.title}} </a></p>
+
+
+{% endfor %}
+
+
+
+
+
+<a href="{% url 'raselacademy:index' %}">Home </a>
+
+
+
+
+{% endblock %}

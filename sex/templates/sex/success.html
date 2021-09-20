@@ -1,0 +1,18 @@
+{% extends "blogger/base.html" %}
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block body %}
+<h1> Successfuly! You comented, comment has been sent to moderator.</h1> 
+{{message}}
+
+ 
+<a href="{% url 'blogger:index' %}">Home </a>
+</div>
+</div>
+</div>
+
+
+{% endblock %}
