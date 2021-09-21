@@ -72,6 +72,25 @@ DATABASES = {
 import dj_database_url
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
+DATABASES = {
+
+    'default': {
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+        'NAME': 'deqnra9k44pbhr'                         
+
+        'USER': 'zmbabbliftkhyk',
+
+        'PASSWORD': 'e2c3d566e8743b0e4d5bfdb0d60ab61bd72c78fb7bb1fe5724df4e83bb8a2703',
+
+        'HOST': 'ec2-54-174-172-218.compute-1.amazonaws.com',
+
+        'PORT': '5432',
+
+    }
+
+}
 
 
 
